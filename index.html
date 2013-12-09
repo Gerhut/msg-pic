@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>消息配图</title>
-  <meta name="viewport" content="width=device-width, inital-scale=1">
-  <link href="//cdn.staticfile.org/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
-<body ng-app ng-controller="MainController">
+<body ng-app="app" ng-controller="MainController">
   <div class="container">
-    <input ng-model="message" placeholder="输入你想发的消息" ng-change="updateImage();">
+    <input ng-model="message" placeholder="输入你想发的消息">
+    <button ng-click="updateImage()">搜索配图</button>
     <div>
-      <img ng-repeat="picture in pictures" ng-src="{{picture.thumb}}">
+      <img class="img-thumbnail" ng-repeat="picture in pictures" ng-src="{{picture.thumb}}">
     </div>
   </div>
-  <script src="//cdn.staticfile.org/angular.js/1.2.1/angular.min.js"></script>
+  <script src="http://cdn.staticfile.org/angular.js/1.2.1/angular.min.js"></script>
   <script src="MainController.js"></script>
 </body>
 </html>
