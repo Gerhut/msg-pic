@@ -6,13 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="app" ng-controller="MainController">
-  <div class="container">
-    <input ng-model="message" placeholder="输入你想发的消息">
-    <button ng-click="updateImage()">搜索配图</button>
-    <div>
-      <img class="img-thumbnail" ng-repeat="picture in pictures" ng-src="{{picture.thumb}}">
+  <div class="container-fluid">
+    <form ng-submit="updateImage()">
+      <div class="row">
+        <div class="col-sm-10">
+          <input class="form-control" placeholder="输入你想发的消息" ng-model="message">
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-default btn-block">搜索配图</button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="result col-lg-2 col-sm-3 col-xs-6" ng-repeat="picture in pictures">
+        <img class="img-thumbnail" ng-src="{{picture.thumb}}">
+      </div>
     </div>
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
